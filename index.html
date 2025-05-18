@@ -196,7 +196,7 @@
     document.querySelectorAll('.card').forEach(card => {
       card.addEventListener('click', () => {
         const page = card.dataset.page;
-        alert(`In demo mode. Would open: ${page}`);
+        window.location.href = page;
         // In production, use: window.location.href = page;
       });
     });
