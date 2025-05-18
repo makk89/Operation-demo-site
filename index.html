@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Commercial Ops Repository</title>
+  <style>
+    :root {
+      --brand-blue: #004f9e;
+      --brand-light: #f5f7fa;
+      --brand-dark: #002a5c;
+      --text-main: #1f1f1f;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: "Segoe UI", Roboto, sans-serif;
+    }
+    body {
+      background: var(--brand-light);
+      color: var(--text-main);
+      line-height: 1.4;
+    }
+    header {
+      position: sticky;
+      top: 0;
+      width: 100%;
+      background: #ffffff;
+      border-bottom: 1px solid #e1e4e8;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.75rem 1.25rem;
+      z-index: 100;
+    }
+    header .logo {
+      font-weight: 600;
+      color: var(--brand-blue);
+      text-decoration: none;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+    }
+    nav a {
+      text-decoration: none;
+      color: var(--text-main);
+      font-size: 0.95rem;
+      transition: color 0.2s ease;
+    }
+    nav a:hover {
+      color: var(--brand-blue);
+    }
+    .hero {
+      background: linear-gradient(135deg, var(--brand-blue) 0%, var(--brand-dark) 100%);
+      color: #ffffff;
+      padding: 4rem 1.25rem 3rem;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 2.25rem;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+    .hero p {
+      font-size: 1rem;
+      opacity: 0.9;
+      margin-bottom: 1.5rem;
+    }
+    .search-box {
+      max-width: 480px;
+      margin: 0 auto;
+      position: relative;
+    }
+    .search-box input {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: none;
+      border-radius: 0.5rem;
+      font-size: 1rem;
+    }
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.25rem;
+      padding: 2.5rem 1.25rem;
+      width: 100%;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+    .card {
+      background: #ffffff;
+      border-radius: 0.75rem;
+      padding: 1.5rem 1.25rem;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.04);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+    }
+    .card h3 {
+      font-size: 1.125rem;
+      margin-bottom: 0.5rem;
+      color: var(--brand-blue);
+      font-weight: 600;
+    }
+    .card p {
+      font-size: 0.9rem;
+      opacity: 0.85;
+    }
+    footer {
+      text-align: center;
+      padding: 1.25rem 0 2rem;
+      font-size: 0.8rem;
+      color: #6b7280;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a class="logo" href="#">SMM Commercial Ops</a>
+    <nav>
+      <ul>
+        <li><a href="#">Help</a></li>
+        <li><a href="#">Profile</a></li>
+        <li><a href="#" id="themeToggle">☾</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Central Data Repository</h1>
+    <p>Search, view, and govern critical commercial operations data.</p>
+    <div class="search-box">
+      <input type="search" id="globalSearch" placeholder="Search by vessel, voyage, or document…" />
+    </div>
+  </section>
+
+  <main class="card-grid">
+    <div class="card" data-page="approvals.html">
+      <h3>Operations Approvals</h3>
+      <p>STS records, doping permits, tank cleaning decisions.</p>
+    </div>
+
+    <div class="card" data-page="loi.html">
+      <h3>Letters of Indemnity</h3>
+      <p>All LOI sub-types, version controlled.</p>
+    </div>
+
+    <div class="card" data-page="blueprints.html">
+      <h3>Vessel Blueprints</h3>
+      <p>Plans, piping, mooring, GA files.</p>
+    </div>
+
+    <div class="card" data-page="questionnaires.html">
+      <h3>Terminal Questionnaires</h3>
+      <p>Latest cleared forms per terminal.</p>
+    </div>
+
+    <div class="card" data-page="incidents.html">
+      <h3>Incident Logbook</h3>
+      <p>Port, spill, navigation, or mooring failures.</p>
+    </div>
+
+    <div class="card" data-page="sanctions.html">
+      <h3>Sanctions & Dark Activity</h3>
+      <p>Vessel exchanges and compliance evidence.</p>
+    </div>
+
+    <div class="card" data-page="performance.html">
+      <h3>Performance Metrics</h3>
+      <p>CP speed claims and pool revisions.</p>
+    </div>
+
+    <div class="card" data-page="records.html">
+      <h3>Operational Records</h3>
+      <p>Fresh water, garbage, BWMS data.</p>
+    </div>
+
+    <div class="card" data-page="security.html">
+      <h3>Security Hub</h3>
+      <p>Citadel contacts, pilot issues, stowaways.</p>
+    </div>
+  </main>
+
+  <footer>
+    © 2025 Scorpio Marine Management Ltd. All rights reserved.
+  </footer>
+
+  <script>
+    // simple navigation handler
+    document.querySelectorAll('.card').forEach(card => {
+      card.addEventListener('click', () => {
+        const page = card.dataset.page;
+        alert(`In demo mode. Would open: ${page}`);
+        // In production, use: window.location.href = page;
+      });
+    });
+
+    // dark mode toggle
+    const toggle = document.getElementById('themeToggle');
+    toggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark');
+      if (document.body.classList.contains('dark')) {
+        document.documentElement.style.setProperty('--brand-light', '#111827');
+        document.documentElement.style.setProperty('--text-main', '#f3f4f6');
+        toggle.textContent = '☀︎';
+      } else {
+        document.documentElement.style.setProperty('--brand-light', '#f5f7fa');
+        document.documentElement.style.setProperty('--text-main', '#1f1f1f');
+        toggle.textContent = '☾';
+      }
+    });
+
+    // basic search interaction
+    document.getElementById('globalSearch').addEventListener('keydown', e => {
+      if (e.key === 'Enter') {
+        alert(`Demo search for: ${e.target.value}`);
+      }
+    });
+  </script>
+</body>
+</html>
